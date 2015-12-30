@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_load"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    android:theme="@android:style/Theme.Light.NoTitleBar" >
+
+    <LinearLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:src="@drawable/icon" />
+
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:text="Loading..."
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="116dp"
+            android:background="@drawable/start_button"
+            android:text="Start"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>
