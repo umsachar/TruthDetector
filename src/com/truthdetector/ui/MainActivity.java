@@ -120,6 +120,36 @@ public class MainActivity extends Activity implements MarkerView.MarkerListener,
 
 			}
 		});
+		
+		mWaveformView = (WaveformView)findViewById(R.id.waveform);
+        mWaveformView.setListener(this);
+
+        mInfo = (TextView)findViewById(R.id.info);
+        mInfo.setText(mCaption);
+
+        mMaxPos = 0;
+
+        try {
+			readFile(new File(globals.getAbsFilePath()), mWaveformView);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+        mStartMarker = (MarkerView)findViewById(R.id.startmarker);
+        mStartMarker.setListener(this);
+        mStartMarker.setAlpha(1f);
+        mStartMarker.setFocusable(true);
+        mStartMarker.setFocusableInTouchMode(true);
+        mStartVisible = true;
+
+        mEndMarker = (MarkerView)findViewById(R.id.endmarker);
+        mEndMarker.setListener(this);
+        mEndMarker.setAlpha(1f);
+        mEndMarker.setFocusable(true);
+        mEndMarker.setFocusableInTouchMode(true);
+        mEndVisible = true;
+
+        updateDisplay();
 	}
 
 	private void setRecoded(boolean enabled) {
